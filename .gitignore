@@ -34,5 +34,5 @@
 *.dSYM/
 *.su
 
-# Clion specific files
-CMakeLists.txt
+# Mac specific files
+.DS_Store
