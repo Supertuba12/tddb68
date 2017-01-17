@@ -10,14 +10,14 @@ int main(int argc, char ** argv)
   bufend = &buf[9]; // End of buffer
 
   while (bufi != bufend){ // Run through string 
-    *bufi = stri; // make bufi point to last char in str
-    bufi++; // move to next ppointer
-    stri--; // move backwards in str
+    *bufi = stri;
+    bufi++;
+    stri--; 
   }
 
-  while (bufi != buf){ // Some sort of decoder
-    *(*bufi) -= 32; // Change ascii value for each char in str
-    bufi--; // ready the second char
+  while (bufi != buf){ // Make all caps
+    bufi--; // FIXED. DO NOT TRY TO CAPS NULL CHAR.
+    **bufi -= 32; 
   }
 
   while (bufi != bufend){ // Print decoded msg
