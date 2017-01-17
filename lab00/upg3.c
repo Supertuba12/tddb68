@@ -7,12 +7,12 @@ struct list_item {
 
 /* puts x at the end of the list */
 void append(struct list_item *first, int x);
-  
+
 /* puts x at the beginning of the list */
-void prepend(struct list_item *first, int x); 
+void prepend(struct list_item *first, int x);
 
 /* prints all elements in the list */
-void print(struct list_item *first);  
+void print(struct list_item *first);
 
 /* input_sorted: find the first element in the list larger than x
      and input x right before that element */
@@ -48,7 +48,11 @@ void print(struct list_item *first){
     if(first->next != NULL){
         first = first->next;
         while(first != NULL){
-            printf("%d", first->value);
+          if(first->next == NULL){
+            printf("%d",first->value);
+          }else{
+            printf("%d, ", first->value);
+          }
             first = first->next;
         }
         printf("\n");
@@ -88,8 +92,8 @@ int main(){
     struct list_item root;
     root.value = -1;
     root.next = NULL;
-    
-    append(&root, 1);
+
+    append(&root, 112);
     append(&root, 2);
     prepend(&root, 3);
     input_sorted(&root, 2);
